@@ -6,6 +6,14 @@ questions.forEach(question => {
     const button = question.querySelector('.question-btn');
     // console.log(button);
     button.addEventListener('click', () => {
+
+        //to remove show-text class from questions excpet selected question
+        questions.forEach(item => {
+            if (item !== question) {
+                item.classList.remove('show-text');
+            }
+        })
+
         question.classList.toggle('show-text');
     })
 });
